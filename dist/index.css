@@ -1,0 +1,28 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+body {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.interface-container {
+
+    width:50%;
+    height:700px;
+    margin:150px;
+    display:grid;
+    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: 1fr;
+    gap:15px;
+
+}
+
+.display {
+    border:1px solid black;
+    width:90%;
+    height:30px;
+}
