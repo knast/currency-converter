@@ -23,6 +23,26 @@ body {
 
 .display {
     border:1px solid black;
-    width:90%;
+    width:95%;
     height:30px;
+}
+
+
+.choose-convert {
+    display:flex;
+    justify-content:center;
+    align-items:space-between;
+    
+}
+
+#user-value {
+    width:95%;
+    height:30px;
+    padding-left:8px;
+    font-size:18px;
+}
+
+.choose-convert select {
+    width:100px;
+    height:100px;
 }

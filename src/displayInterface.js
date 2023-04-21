@@ -1,3 +1,5 @@
+import addCurrencies from './addCurrencies.js';
+
 export default function displayInterface() {
 
     const body = document.querySelector('body');
@@ -77,6 +79,23 @@ export default function displayInterface() {
     convertDisplay.classList.add('display');
     displaySection.appendChild(convertLabel);
     displaySection.appendChild(convertDisplay);
+
+    // Node for adding options in select element
+    const userSelect = document.getElementById('user-currency');
+
+
+    // Function for creating and appending options to a select element
+    addCurrencies(userSelect);
+
+    const currencyConvert = document.getElementById('currency-to-convert');
+
+    addCurrencies(currencyConvert);
+
+    
+    
+
+    
+    
 
 
 
