@@ -38,8 +38,9 @@ export default function displayInterface() {
     labelUserValue.setAttribute('id', 'user-value');
     labelUserValue.textContent = 'Enter a value:';
     const inputUserValue = document.createElement('input');
-    inputUserValue.setAttribute('type', 'number');
+    inputUserValue.setAttribute('type', 'text');
     inputUserValue.setAttribute('id', 'user-value');
+    inputUserValue.classList.add('user-input');
     userSection.appendChild(labelUserValue);
     userSection.appendChild(inputUserValue);
 

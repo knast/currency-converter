@@ -1,3 +1,5 @@
+// Function for adding currencies for each select element
+
 export default function addCurrencies(selectContainer) {
 
     const plnOption = document.createElement('option');
@@ -9,8 +11,8 @@ export default function addCurrencies(selectContainer) {
     eurOption.textContent = 'EUR';
 
     const dolOption = document.createElement('option');
-    dolOption.name = '$';
-    dolOption.textContent = 'US Dollar';
+    dolOption.name = 'usd';
+    dolOption.textContent = 'USD';
 
     const crownOption = document.createElement('option');
     crownOption.name = 'czech-crown';
