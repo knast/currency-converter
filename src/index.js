@@ -1,7 +1,7 @@
 import displayInterface from './displayInterface.js';
 
 
-async function getCurrencyData(userCurrency, convertCurrency) {
+async function getCurrencyData(userCurrency, convertCurrency, amount) {
         var myHeaders = new Headers();
         myHeaders.append("apikey", "6uCc6EgRjepXuQDpI9wO1ebptb0ekznd");
     
@@ -11,9 +11,10 @@ async function getCurrencyData(userCurrency, convertCurrency) {
             headers: myHeaders
         }
     
-        const response = await fetch(`https://api.apilayer.com/exchangerates_data/convert?to=${convertCurrency.value}&from=${userCurrency.value}&amount=50`, requestOptions)
+        const response = await fetch(`https://api.apilayer.com/exchangerates_data/convert?to=${convertCurrency}&from=${userCurrency}&amount=${amount}`, requestOptions)
         const data = await response.json();
-        return data.result;
+        const result = data.result;
+        return result;
         
     }
 
@@ -31,15 +32,12 @@ async function getCurrencyData(userCurrency, convertCurrency) {
 
     convertBtn.addEventListener('click', () => {
 
-        const userCurrency = document.getElementById('user-currency');
-        const convertCurrency = document.getElementById('currency-to-convert');
-        const valueToConvert = document.getElementById('user-value').value;
+        const userCurrency = document.getElementById('user-currency').value;
+        const convertCurrency = document.getElementById('currency-to-convert').value;
+        const valueToConvert = document.querySelector('.user-input').value;
         const display = document.querySelector('.display');
-        const conversion = getCurrencyData(userCurrency, convertCurrency);
-        console.log(conversion);
-        display.textContent = conversion;
-            
-
+        const conversion = getCurrencyData(userCurrency, convertCurrency, valueToConvert).then(result => display.textContent = result);
+        
     })
 
 
