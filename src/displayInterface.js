@@ -57,7 +57,7 @@ export default function displayInterface() {
 
     // Adding an image which will work as a button to launch event which fetches data and converts the user input and displays it
     const convertBtn = new Image(100,100);
-    convertBtn.src = '../images/swap.png';
+    convertBtn.src = 'images/swap.png';
     convertBtn.classList.add('convert-btn');
     conversionSection.appendChild(convertBtn);
 
